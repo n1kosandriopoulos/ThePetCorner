@@ -1,0 +1,63 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    transition: all var(--transition-speed);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/*  Main Content */
+main {
+    min-height: 80vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Sections */
+section {
+    padding: var(--section-spacing) 0;  
+}
+
+/* Containers */
+.container {
+    max-width: 1200px;
+}
+
+/* Text Selection */
+::selection {
+    background: var(--accent-color);
+    color: white;
+}

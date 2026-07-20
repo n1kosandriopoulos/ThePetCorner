@@ -1,0 +1,322 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+Contact Us | The Pet Corner
+{% endblock %}
+
+{% block content %}
+
+<!-- Contact Hero -->
+
+<section class="contact-hero">
+
+    <div class="container text-center">
+
+        <span class="hero-badge">
+
+            <i class="bi bi-envelope-heart-fill"></i>
+
+            Contact The Pet Corner
+
+        </span>
+
+        <h1 class="hero-title">
+
+            We'd Love To Hear From You
+
+        </h1>
+
+        <p class="hero-description mx-auto">
+
+            Whether you have a question about our products, need help with an
+            order, or simply want expert advice for your beloved pets, our
+            friendly team is always ready to help.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Success Message -->
+
+{% if messages %}
+
+    <div class="container mb-4">
+
+        {% for message in messages %}
+
+            <div class="alert alert-success">
+
+                {{ message }}
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endif %}
+
+<!-- Contact Information -->
+
+<section class="contact-info">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- Address -->
+
+            <div class="col-lg-4">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                    </div>
+
+                    <h3>Visit Us</h3>
+
+                    <p>
+
+                        123 Pet Street<br>
+                        Athens, Greece
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Phone -->
+
+            <div class="col-lg-4">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                    </div>
+
+                    <h3>Call Us</h3>
+
+                    <p>
+
+                        +30 210 123 4567<br>
+                        Monday – Friday<br>
+                        09:00 – 18:00
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Email -->
+
+            <div class="col-lg-4">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                    </div>
+
+                    <h3>Email Us</h3>
+
+                    <p>
+
+                        info@thepetcorner.com<br>
+                        We usually reply<br>
+                        within 24 hours.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact Form -->
+ 
+<section class="contact-form-section">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <!-- Contact Form -->
+
+            <div class="col-lg-7">
+
+                <div class="contact-form-card">
+
+                    <span class="about-section-subtitle">
+
+                        <i class="bi bi-chat-dots-fill"></i>
+
+                        Send Us A Message
+
+                    </span>
+
+                    <h2 class="mb-4">
+
+                        We'd Love To Hear From You
+
+                    </h2>
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Full Name
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Enter your full name"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Email Address
+
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Subject
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="What is your message about?"
+                                required>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+
+                                Message
+
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                rows="6"
+                                placeholder="Write your message here..."
+                                required></textarea>
+
+                        </div>
+
+                        <button class="btn btn-success btn-lg">
+
+                            <i class="bi bi-send-fill"></i>
+
+                            Send Message
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Opening Hours -->
+
+            <div class="col-lg-5">
+
+                <div class="hours-card">
+
+                    <span class="about-section-subtitle">
+
+                        <i class="bi bi-clock-fill"></i>
+
+                        Opening Hours
+
+                    </span>
+
+                    <h3 class="mb-4">
+
+                        Visit Our Store
+
+                    </h3>
+
+                    <ul class="hours-list">
+
+                        <li><strong>Monday</strong><span>09:00 - 18:00</span></li>
+
+                        <li><strong>Tuesday</strong><span>09:00 - 18:00</span></li>
+
+                        <li><strong>Wednesday</strong><span>09:00 - 18:00</span></li>
+
+                        <li><strong>Thursday</strong><span>09:00 - 18:00</span></li>
+
+                        <li><strong>Friday</strong><span>09:00 - 18:00</span></li>
+
+                        <li><strong>Saturday</strong><span>10:00 - 16:00</span></li>
+
+                        <li><strong>Sunday</strong><span>Closed</span></li>
+
+                    </ul>
+
+                    <hr>
+
+                    <p class="mb-0">
+
+                        <i class="bi bi-info-circle-fill text-success"></i>
+
+                        Our team is always happy to help you choose the best
+                        products for your pets.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

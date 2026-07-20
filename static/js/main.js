@@ -1,0 +1,1 @@
+console.log("The Pet Corner loaded successfully!");

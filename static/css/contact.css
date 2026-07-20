@@ -1,0 +1,98 @@
+.contact-hero {
+    padding: 90px 0 60px;
+}
+
+.contact-hero .hero-description {
+    max-width: 700px;
+}
+
+.contact-info {
+    padding: 30px 0 90px;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.12);
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.contact-card h3 {
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.contact-card p {
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.contact-form-section {
+    padding: 90px 0;
+}
+
+.contact-form-card,
+.hours-card {
+    background: white;
+    border-radius: 30px;
+    padding: 45px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.contact-form-card h2 {
+    font-weight: 800;
+}
+
+.hours-card h3 {
+    font-weight: 700;
+}
+
+.hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #ececec;
+}
+
+.hours-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-form-card .form-control {
+    border-radius: 15px;
+    padding: 14px;
+}
+
+.contact-form-card button {
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-weight: 700;
+}

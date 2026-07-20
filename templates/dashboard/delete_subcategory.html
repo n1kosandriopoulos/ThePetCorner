@@ -1,0 +1,54 @@
+{% extends "dashboard/base_dashboard.html" %}
+
+{% block title %}
+Delete Subcategory
+{% endblock %}
+
+{% block dashboard_content %}
+
+<div class="dashboard-card text-center">
+
+    <h2 class="mb-4">
+
+        Delete Subcategory
+
+    </h2>
+
+    <p class="lead">
+
+        Are you sure you want to delete
+
+        <strong>{{ subcategory.name }}</strong>?
+
+    </p>
+
+    <p class="text-muted">
+
+        Category:
+        <strong>{{ subcategory.category.name }}</strong>
+
+    </p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <button type="submit" class="btn btn-danger">
+
+            <i class="bi bi-trash-fill"></i>
+
+            Delete Subcategory
+
+        </button>
+
+        <a href="{% url 'manage_subcategories' %}" class="btn btn-secondary">
+
+            Cancel
+
+        </a>
+
+    </form>
+
+</div>
+
+{% endblock %}

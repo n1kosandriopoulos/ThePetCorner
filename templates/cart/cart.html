@@ -1,0 +1,173 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+Shopping Cart | The Pet Corner
+{% endblock %}
+
+{% block content %}
+
+<section class="cart-page">
+
+    <div class="container">
+
+        <h1 class="section-title">Shopping Cart</h1>
+
+        <div
+            class="cart-content"
+            id="cart-content"
+            {% if not cart_items %}
+                style="display:none;"
+            {% endif %}
+        >
+
+            <div class="cart-items">
+
+                {% for item in cart_items %}
+
+                    <div class="cart-card
+                        {% if item.product.subcategory.category.name == 'Dogs' %}
+                            dog-cart
+                        {% elif item.product.subcategory.category.name == 'Cats' %}
+                            cat-cart
+                        {% elif item.product.subcategory.category.name == 'Birds' %}
+                            bird-cart
+                        {% elif item.product.subcategory.category.name == 'Fish' %}
+                            fish-cart
+                        {% endif %}
+                    "
+                    data-product-id="{{ item.product.id }}">
+
+                        <div class="cart-image">
+
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+
+                        </div>
+
+                        <div class="cart-details">
+
+                            <h3>{{ item.product.name }}</h3>
+
+                            <p class="cart-price">
+                                €{{ item.product.price|floatformat:2 }}
+                            </p>
+
+                            <div class="cart-quantity">
+
+                                <p class="quantity-label">
+                                    Quantity
+                                </p>
+
+                                <div class="quantity-controls">
+
+                                    <button class="quantity-btn minus-btn">
+
+                                        <i class="bi bi-dash"></i>
+
+                                    </button>
+
+                                    <span class="quantity-value">
+
+                                        {{ item.quantity }}
+
+                                    </span>
+
+                                    <button class="quantity-btn plus-btn">
+
+                                        <i class="bi bi-plus"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <button class="remove-btn">
+
+                                    <i class="bi bi-trash"></i>
+
+                                    Remove 
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="cart-subtotal">
+
+                            €<span class="subtotal-value">
+
+                                {{ item.subtotal|floatformat:2 }}
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="cart-summary">
+
+                <h3>Cart Total</h3>
+
+                <h2>
+
+                    €<span id="cart-total">
+
+                        {{ total|floatformat:2 }}
+
+                    </span>
+
+                </h2>
+
+                <div class="cart-buttons">
+
+                    <a href="{% url 'products' %}" class="btn btn-outline-success">
+
+                        Continue Shopping
+
+                    </a>
+
+                    <a href="{% url 'checkout' %}" class="btn btn-success">
+
+                        Checkout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            id="empty-cart"
+            class="empty-cart"
+            {% if cart_items %}
+                style="display:none;"
+            {% endif %}
+        >
+
+            <h2>Your shopping cart is empty.</h2>
+
+            <a href="{% url 'products' %}" class="btn btn-success">
+
+                Browse Products
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script src="{% static 'js/cart.js' %}"></script>
+
+{% endblock %}

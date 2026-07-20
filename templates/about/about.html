@@ -1,0 +1,124 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+About Us | The Pet Corner
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="about-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="hero-badge">
+
+                    <i class="bi bi-heart-fill"></i>About The Pet Corner
+
+                </span>
+
+                <h1 class="hero-title">Helping Every Pet Live Their Best Life</h1>
+
+                <p class="hero-description">At The Pet Corner, we believe every pet deserves love, care and high-quality products. Our goal is to help pet owners find everything they need in one friendly place.</p>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="{% static 'images/about-hero.png' %}" alt="Happy pets" class="img-fluid hero-image">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Our Story -->
+<section class="our-story">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <span class="about-section-subtitle">
+
+                    <i class="bi bi-stars"></i>Our Story
+
+                </span>
+
+                <h2 class="about-section-title">Passionate About Pets, Dedicated To Their Happiness</h2>
+
+                <p>The Pet Corner was created with one simple goal: helping pet owners find trusted, high-quality products in one convenient place. We understand that pets are part of the family, and they deserve the very best.</p>
+
+                <p>From nutritious food and exciting toys to grooming essentials and everyday accessories, we carefully select products that promote healthier, happier lives for dogs, cats, birds, fish and many other beloved pets.</p>
+
+                <p>Our mission is to make shopping for your pets simple, enjoyable and reliable, while giving every customer the confidence that they're choosing products they'll love.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Our Mission -->
+<section class="our-mission">
+
+    <div class="container">
+
+        <span class="about-section-subtitle">
+
+            <i class="bi bi-bullseye"></i>Our Mission
+
+        </span>
+
+        <h2 class="mission-title">Every Pet Deserves The Best Life Possible</h2>
+
+        <p class="mission-text">Our mission is to help pet owners provide happier, healthier and more fulfilling lives for their beloved companions by offering carefully selected products they can trust. We believe every pet, whether furry, feathered or finned, deserves love, comfort and the highest quality care every single day.</p>
+
+    </div>
+
+</section>
+
+<!-- Call To Action -->
+<section class="about-cta">
+
+    <div class="container">
+
+        <div class="about-cta-box">
+
+            <span class="about-section-subtitle">
+
+                <i class="bi bi-paw-fill"></i>Ready To Get Started?
+
+            </span>
+
+            <h2 class="about-cta-title">Find Everything Your Pet Needs In One Place</h2>
+
+            <p class="about-cta-text">Browse our carefully selected collection of premium pet food, toys, grooming essentials and accessories, and discover why thousands of pet lovers trust The Pet Corner.</p>
+
+            <a href="{% url 'products' %}" class="btn about-cta-button">
+
+                Browse Products
+
+                <i class="bi bi-arrow-right ms-2"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

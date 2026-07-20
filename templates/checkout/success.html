@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+Order Successful! | The Pet Corner
+{% endblock %}
+
+{% block content %}
+
+<section class="success-page">
+
+    <div class="success-card">
+
+        <div class="success-icon">
+
+            <i class="bi bi-check-circle-fill"></i>
+
+        </div>
+
+        <h1>Thank You!</h1>
+
+        <p class="success-message">Your order has been placed successfully.</p>
+
+        <p>Our team is already preparing your pet supplies and will process your order as soon as possible.</p>
+
+        <a href="{% url 'products' %}" class="btn btn-success">
+
+            <i class="bi bi-bag"></i>
+
+            Continue Shopping
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

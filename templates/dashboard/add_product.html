@@ -1,0 +1,43 @@
+{% extends "dashboard/base_dashboard.html" %}
+
+{% block title %}
+Add Product
+{% endblock %}
+
+{% block dashboard_content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h1>Add Product</h1>
+
+    <a href="{% url 'manage_products' %}" class="btn btn-secondary">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Back to Products
+
+    </a>
+
+</div>
+
+<div class="dashboard-card">
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success">
+
+            <i class="bi bi-plus-circle"></i>
+
+            Add Product
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

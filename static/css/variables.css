@@ -1,0 +1,61 @@
+/* This file contains CSS variables for colors, fonts, border radius, shadows, animations, and spacing used throughout the website. The reason why I decided to use CSS variables for this project is because I can have a consistent theme across the whole website and make changes easily if I want to.*/
+
+/* Colors */
+:root {
+
+    --primary-color: #2e8b57;
+    --primary-dark: #236b43;
+    --secondary-color: #4fc3f7;
+    --accent-color: #ffb74d;
+    --accent-dark: #f57c00;
+    --background-color: #fffdf7;
+    --card-color: #ffffff;
+    --text-color: #333333;
+    --text-light: #666666;
+    --section-light: #f9faf7;
+    --border-color: #e5e5e5;
+    --success-color: #4caf50;
+    --danger-color: #e53935;
+    --bird-color: #3498db;
+    --fish-color: #00b8a9;
+
+    /* Brand Greens */
+    --success-dark: #3f8a48;
+    --hero-circle: #ddf5d8;
+
+    /* Star Color */
+    --star-color: #ffd43b;
+
+    /* Footer */
+    --footer-bg: #2d2d2d;
+    --footer-text: #d9d9d9;
+    --footer-border: #555555;
+
+    /* Fonts */
+    --heading-font: "Poppins", sans-serif;
+    --body-font: "Nunito", sans-serif;
+
+    /* Border Radius */
+    --radius-small: 10px;
+    --radius-medium: 18px;
+    --radius-large: 28px;
+    --radius-pill: 50px;
+
+    /* Shadows */
+    --shadow-small: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    --shadow-large: 0px 15px 35px rgba(0, 0, 0, 0.18);
+
+    /* Card Shadows */
+    --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 25px 55px rgba(0, 0, 0, 0.2);
+
+    /* Animations */
+    --transition-speed: 0.3s;
+
+    /* Spacing */
+    --section-spacing: 90px;
+    --card-padding: 25px;
+    --button-padding: 14px 28px;
+
+}

@@ -1,0 +1,43 @@
+{% extends "dashboard/base_dashboard.html" %}
+
+{% block title %}
+Add Subcategory
+{% endblock %}
+
+{% block dashboard_content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h1>Add Subcategory</h1>
+
+    <a href="{% url 'manage_subcategories' %}" class="btn btn-secondary">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Back to Subcategories
+
+    </a>
+
+</div>
+
+<div class="dashboard-card">
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success">
+
+            <i class="bi bi-check-circle"></i>
+
+            Save Subcategory
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

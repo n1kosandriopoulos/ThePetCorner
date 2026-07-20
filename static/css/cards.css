@@ -1,0 +1,136 @@
+/* Cards Design */
+.category-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: all var(--transition-speed);
+}
+
+.category-card {
+    background: white;
+    border-radius: var(--radius-large);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    height: 100%;
+    transition: all var(--transition-speed);
+    overflow: hidden;
+}
+
+/* Cards Hover Effect */
+.category-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover);
+}
+
+.category-card:hover img {
+    transform:scale(1.08);
+}
+
+/* Cards Text */
+.category-card h3 {
+    margin-top: 20px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.category-card p {
+    color: #666;
+    line-height: 1.7;
+    margin: 18px 0;
+    min-height: 80px;
+}
+
+/* Cards Buttons */
+.btn-category {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+/* Cards Buttons Hover Effect */
+.btn-category:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Cards Spacing */
+.categories-section {
+    padding: 120px 0;
+}
+
+/* Dog Card */
+.dog-card {
+    border-top: 6px solid #4caf50;
+}
+
+.dog-card h3 {
+    color: var(--success-color);
+}
+
+.dog-card .btn-category {
+    background: #4caf50;
+}
+
+.dog-card:hover {
+    box-shadow: 0 20px 45px rgba(76, 175, 80, 0.60);
+}
+
+/* Cat Card */
+.cat-card {
+    border-top: 6px solid #f39c12;
+}
+
+.cat-card h3 {
+    color: var(--accent-color);
+}
+
+.cat-card .btn-category {
+    background: #f39c12;
+}
+
+.cat-card:hover {
+    box-shadow: 0 20px 45px rgba(243, 156, 18, 0.60);
+}
+
+/* Bird Card */
+.bird-card {
+    border-top: 6px solid #3498db;
+}
+
+.bird-card h3 {
+    color: var(--bird-color);
+}
+
+.bird-card .btn-category {
+    background: #3498db; 
+}
+
+.bird-card:hover {
+    box-shadow: 0 20px 45px rgba(52, 152, 219, 0.60);
+}
+
+/* Fish Card */
+.fish-card {
+    border-top: 6px solid #00b8a9;
+}
+
+.fish-card h3 {
+    color: var(--fish-color);
+}
+
+.fish-card .btn-category {
+    background: #00b8a9;
+}
+
+.fish-card:hover {
+    box-shadow: 0 20px 45px rgba(0, 184, 169, 0.60);
+}

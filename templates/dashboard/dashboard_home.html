@@ -1,0 +1,276 @@
+{% extends "dashboard/base_dashboard.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block dashboard_content %}
+
+<div class="dashboard-header">
+
+    <h1>Welcome back, {{ request.user.first_name|default:request.user.username }}! 👋</h1>
+
+    <p>
+        You are logged in as
+
+        <strong>{{ request.user.profile.role }}</strong>.
+    </p>
+
+</div>
+
+<div class="row mt-4">
+
+    {% if request.user.profile.role == "Customer" %}
+
+        <div class="col-md-6 col-lg-4 mb-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-bag-check-fill"></i>
+
+                <h4>My Orders</h4>
+
+                <p>View your purchase history.</p>
+
+                <a href="{% url 'my_orders' %}" class="btn btn-success">
+
+                    View Orders
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-chat-left-text-fill"></i>
+
+                <h4>My Reviews</h4>
+
+                <p>View the reviews you have written.</p>
+
+                <a href="{% url 'my_reviews' %}" class="btn btn-success">
+
+                    View Reviews
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-person-circle"></i>
+
+                <h4>My Profile</h4>
+
+                <p>View and update your personal information.</p>
+
+                <a href="{% url 'my_profile' %}" class="btn btn-success">
+
+                    My Profile
+
+                </a>
+
+            </div>
+
+        </div>
+
+    {% elif request.user.profile.role == "Employee" %}
+
+        <div class="col-md-6 col-lg-3 mb-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-bag-check-fill"></i>
+
+                <h4>Orders</h4>
+
+                <p>Manage customer orders.</p>
+
+                <a href="{% url 'manage_orders' %}" class="btn btn-success">
+
+                    Manage Orders
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-box-seam"></i>
+
+                <h4>Products</h4>
+
+                <p>Manage products.</p>
+
+                <a href="{% url 'manage_products' %}" class="btn btn-success">
+
+                    Manage Products
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-tags-fill"></i>
+
+                <h4>Categories</h4>
+
+                <p>Manage categories.</p>
+
+                <a href="{% url 'manage_categories' %}" class="btn btn-success">
+
+                    Manage Categories
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-diagram-3 fs-1"></i>
+
+                <h4>Subcategories</h4>
+
+                <p>Manage Subcategories.</p>
+
+                <a href="{% url 'manage_subcategories' %}" class="btn btn-success">
+
+                    Manage Subcategories
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4">
+
+            <div class="dashboard-card">
+
+                <i class="bi bi-chat-left-text-fill"></i>
+
+                <h4>Reviews</h4>
+
+                <p>Manage customer reviews.</p>
+
+                <a href="{% url 'manage_reviews' %}" class="btn btn-success">
+
+                    Manage Reviews
+
+                </a>
+
+            </div>
+
+        </div>
+
+    {% elif request.user.profile.role == "Administrator" %}
+
+        <div class="col-md-4 mb-4">
+    
+            <div class="dashboard-card">
+    
+                <i class="bi bi-box-seam"></i>
+    
+                <h2>{{ products_count }}</h2>
+    
+                <p>Products</p>
+    
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+    
+            <div class="dashboard-card">
+    
+                <i class="bi bi-tags-fill"></i>
+    
+                <h2>{{ categories_count }}</h2>
+    
+                <p>Categories</p>
+    
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+    
+            <div class="dashboard-card">
+    
+                <i class="bi bi-people-fill"></i>
+    
+                <h2>{{ customers_count }}</h2>
+    
+                <p>Customers</p>
+    
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+    
+            <div class="dashboard-card">
+    
+                <i class="bi bi-person-badge-fill"></i>
+    
+                <h2>{{ employees_count }}</h2>
+    
+                <p>Employees</p>
+    
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+    
+            <div class="dashboard-card">
+    
+                <i class="bi bi-bag-check-fill"></i>
+    
+                <h2>{{ orders_count }}</h2>
+    
+                <p>Orders</p>
+    
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+    
+            <div class="dashboard-card">
+    
+                <i class="bi bi-chat-left-text-fill"></i>
+    
+                <h2>{{ reviews_count }}</h2>
+    
+                <p>Reviews</p>
+    
+            </div>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

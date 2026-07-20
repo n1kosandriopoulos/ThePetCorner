@@ -1,0 +1,264 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+Products | The Pet Corner
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="products-hero">
+
+    <div class="container">
+
+        <div class="products-hero-content">
+
+            <span class="hero-subtitle"><i class="bi bi-heart-fill"></i>Premium Pet Products</span>
+
+            <h1>Everything Your Pet Needs</h1>
+
+            <p>Discover high-quality food, toys, accessories and essentials for dogs, cats, birds and fish - all carefully selected from trusted brands.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Category Section -->
+<section class="category-filter-section">
+
+    <div class="container">
+
+        <div class="category-filter">
+
+            <a href="{% url 'products' %}" class="{% if not selected_category %} active {% endif %}">All Products</a>
+
+            {% for category in categories %}
+
+                <a href="{% url 'products' %}?category={{ category.name }}" class="{% if selected_category == category.name %} active {% endif %}">{{ category.name }}</a>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Search Bar -->
+<div class="container">
+
+    <div class="search-section">
+
+        <form method="GET" class="search-form">
+
+            <!-- Keep the category filter while searching -->
+            {% if selected_category %}
+                <input type="hidden" name="category" value="{{ selected_category }}">
+            {% endif %}
+
+            <input type="text" name="search" class="search-input" placeholder="Search products..." value="{{ request.GET.search }}">
+
+            <button type="submit" class="search-btn">
+
+                <i class="bi bi-search"></i>
+
+                Search
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- Products Section -->
+<section class="products-grid-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            {% if products %}
+
+                {% for product in products %}
+
+                <!-- Product Cards -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="product-card
+                         {% if product.subcategory.category.name == 'Dogs' %} dog-product {% endif %}
+                         {% if product.subcategory.category.name == 'Cats' %} cat-product {% endif %}
+                         {% if product.subcategory.category.name == 'Birds' %} bird-product {% endif %}
+                         {% if product.subcategory.category.name == 'Fish' %} fish-product {% endif %}"
+                         
+                         data-id="{{ product.id }}"
+                         data-name="{{ product.name }}"
+                         data-brand="{{ product.brand }}"
+                         data-category="{{ product.category.name }}"
+                         data-price="{{ product.price }}"
+                         data-rating="{{ product.average_rating }}"
+                         data-review-count="{{ product.review_count }}"
+                         data-image="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no-image.png' %}{% endif %}"
+                         data-description="{{ product.description }}">
+
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                        {% else %}
+                            <img src="{% static 'images/no-image.png' %}" alt="No image available" class="product-image">
+                        {% endif %}
+
+                        <div class="product-body">
+
+                            <span class="product-brand">{{ product.brand }}</span>
+
+                            <h4>{{ product.name }}</h4>
+
+                            <div class="product-rating">
+
+                                ★ {{ product.average_rating }}/5
+                                ({{ product.review_count }} reviews)
+
+                            </div>
+
+                            <p class="product-price">€{{ product.price }}</p>
+
+                            <a href="#" class="btn-product">View Product</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="col-12 text-center py-5">
+
+                    <h3>No products found.</h3>
+
+                    <p>Try searching again by using a different keyword or category.</p>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Product Details Modal (Popup appears when user clicks on a product, without redirecting them to a new page)-->
+<div class="product-modal-overlay">
+
+    <div class="product-modal">
+
+        <button class="modal-close"><i class="bi bi-x-lg"></i></button>
+
+        <div class="modal-content">
+
+            <!-- Left Column (Image) -->
+            <div class="modal-image">
+
+                <img class="modal-product-image" src="" alt="">
+
+            </div>
+
+            <!-- Right Column (Information) -->
+            <div class="modal-details">
+
+                <h2 class="modal-product-name"></h2>
+
+                <div class="modal-product-info">
+
+                    <p class="modal-product-brand">
+
+                        <strong>Brand:</strong>
+                        <span></span>
+
+                    </p>
+
+                    <p class="modal-product-category">
+
+                        <strong>Category:</strong>
+                        <span></span>
+
+                    </p>
+
+                    <div class="modal-rating">
+
+                        <span class="modal-product-stars"></span>
+
+                        <span class="modal-product-rating"></span>
+
+                    </div>
+
+                </div>
+
+                <h3 class="modal-product-price"></h3>
+
+                <p class="modal-product-stock"></p>
+
+                <div class="modal-purchase">
+
+                    <div class="quantity-box">
+
+                        <button class="quantity-minus">-</button>
+
+                        <span class="quantity-value">1</span>
+
+                        <button class="quantity-plus">+</button>
+
+                    </div>
+
+                    <button class="add-cart-btn"><i class="bi bi-cart-plus"></i>Add to Cart</button>
+
+                </div>
+
+                <hr>
+
+                <h4>Description</h4>
+
+                <p class="modal-product-description"></p>
+
+                <hr>
+
+                <h4>Customer Reviews</h4>
+
+                <div class="modal-product-reviews">
+
+                </div>
+
+                <hr>
+
+                <h4>Write a Review</h4>
+
+                <div class="modal-review-section">
+
+                </div>
+
+                <hr>
+
+                <h4>Related Products</h4>
+
+                <div class="modal-related-products">
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

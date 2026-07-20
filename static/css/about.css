@@ -1,0 +1,134 @@
+.about-hero {
+    padding: 80px 0;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 12px 22px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #2d2d2d; 
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #666;
+    max-width: 600px;
+}
+
+.hero-image {
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+.our-story {
+    padding: 90px 0;
+    background: white;
+}
+
+.about-section-subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #2d2d2d;
+    max-width: 700px;
+}
+
+.our-story p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 22px;
+    max-width: 1000px;
+}
+
+.our-mission {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.mission-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2d2d2d;
+    margin: 25px auto;
+    max-width: 700px;
+}
+
+.mission-text {
+    max-width: 850px;
+    margin: auto;
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #666;
+}
+
+.about-cta {
+    padding: 100px 0;
+}
+
+.about-cta-box {
+    background: var(--primary-color);
+    color: white;
+    border-radius: 35px;
+    padding: 70px 50px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(67, 133, 71, 0.25);
+}
+
+.about-cta-box .section-subtitle {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.about-cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.about-cta-text {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-cta-button {
+    background: white;
+    color: var(--primary-color);
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.about-cta-button:hover {
+    background: #f8f8f8;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}

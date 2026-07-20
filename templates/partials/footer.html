@@ -1,0 +1,79 @@
+{% load static %}
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Logo & Description -->
+        <div class="footer-column">
+
+            <img src="{% static 'images/logo.png' %}" alt="The Pet Corner Logo" class="footer-logo">
+
+            <p>Everything your pet needs in one place. We provide quality products, trusted brands and excellent customer service for pet lovers across Greece.</p>
+
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+
+            <h4>Quick Links</h4>
+
+            <ul>
+
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                
+                {% if user.is_authenticated %}
+
+                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+
+                {% else %}
+
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+
+                {% endif %}
+
+                <li><a href="{% url 'cart' %}">Cart</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-column">
+
+            <h4>Contact</h4>
+
+            <p><i class="bi bi-geo-alt-fill"></i>Athens, Greece</p>
+            <p><i class="bi bi-telephone-fill"></i>+30 210 123 4567</p>
+            <p><i class="bi bi-envelope-fill"></i>info@thepetcorner.com</p>
+
+        </div>
+
+        <!-- Social -->
+        <div class="footer-column">
+
+            <h4>Follow Us!</h4>
+
+            <div class="social-icons">
+
+                <a href="https://www.facebook.com/DereeTheAmericanCollegeOfGreece/" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/deree_acg/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.youtube.com/c/DereeTheAmericanCollegeofGreece" target="_blank"><i class="bi bi-youtube"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">© The Pet Corner. All Rights Reserved.</p>
+
+</footer>

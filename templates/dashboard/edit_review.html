@@ -1,0 +1,57 @@
+{% extends "dashboard/base_dashboard.html" %}
+
+{% block title %}
+Edit Review
+{% endblock %}
+
+{% block dashboard_content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h1>Edit Review</h1>
+
+    <a href="{% url 'manage_reviews' %}" class="btn btn-secondary">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Back to Reviews
+
+    </a>
+
+</div>
+
+<div class="dashboard-card">
+
+    <p>
+
+        <strong>Customer:</strong>
+
+        {{ review.user.username }}
+
+    </p>
+
+    <p>
+
+        <strong>Product:</strong>
+
+        {{ review.product.name }}
+
+    </p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success">
+
+            Save Changes
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
